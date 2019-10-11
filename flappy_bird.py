@@ -235,7 +235,6 @@ def main(genomes, config):
             output = nets[x].activate((
                     bird.y, 
                     abs(bird.y - pipes[pipe_idx].height),
-                    200
                     # abs(bird.y - pipes[pipe_idx].bottom)
                 ))
             
@@ -278,7 +277,7 @@ def main(genomes, config):
         for x, bird in enumerate(birds):
                 # check collision with ground
             if bird.y + bird.img.get_height() >= base.y or bird.y < 0:
-                ge[x].fitness -= 100
+                ge[x].fitness -= 20
                 birds.pop(x)
                 nets.pop(x)
                 ge.pop(x)
